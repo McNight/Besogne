@@ -38,7 +38,7 @@ extension Besogne {
     public struct Scope: ~Copyable {
         let state = UnsafeMutablePointer<os_activity_scope_state_s>.allocate(capacity: 1)
 
-        public func leave() {
+        public consuming func leave() {
             _os_activity_scope_leave(state)
         }
 
